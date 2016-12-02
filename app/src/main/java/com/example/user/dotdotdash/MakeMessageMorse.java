@@ -86,7 +86,7 @@ public class MakeMessageMorse extends AppCompatActivity{
         }
         try {
             SmsManager sms = SmsManager.getDefault();
-            sms.sendTextMessage(phoneNumber, null, morseMessage, null, null);
+            sms.sendTextMessage(phoneNumber, null, morseMessageConverted, null, null);
 
             Toast.makeText(this,"Message Sent",Toast.LENGTH_SHORT).show();
         }
@@ -111,7 +111,7 @@ public class MakeMessageMorse extends AppCompatActivity{
             morseBuffer = "";
         } else {
             morseMessageConverted += getCurrCharacter();
-            //Toast.makeText(this, "Valid Morse: " + morseMessageConverted, Toast.LENGTH_SHORT).show();
+            morseMessage += morseBuffer;
             message.setText(morseMessageConverted);
             morseBuffer = "";
         }
@@ -159,6 +159,7 @@ public class MakeMessageMorse extends AppCompatActivity{
         }
         else {
             morseMessageConverted = morseMessageConverted.substring(0, morseMessageConverted.length() - 1);
+            morseMessage = morseMessage.substring(0, morseMessage.length() - 1);
             message.setText(morseMessageConverted);
         }
     }

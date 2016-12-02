@@ -3,34 +3,33 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageButton"
-        android:src="@android:drawable/ic_media_play"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="64dp" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Morse Code Dictionary"
-        android:id="@+id/messDict"
+        android:text="Decode"
+        android:id="@+id/decodeButton"
         android:layout_gravity="center_horizontal"
-        android:layout_alignParentBottom="true"
+        android:onClick="decode"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="77dp"
-        android:onClick="getDict"
         android:textColor="@color/Black"/>
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/decodeText"
+        android:layout_above="@+id/decodeButton"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/mainText"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Text of Message Here"
-        android:id="@+id/textView2"
-        android:layout_marginTop="38dp"
-        android:layout_below="@+id/imageButton"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=""
+        android:id="@+id/decodedText"
+        android:layout_marginTop="86dp"
+        android:layout_below="@+id/decodeButton"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

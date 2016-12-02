@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.SEND_SMS},1);
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.READ_CONTACTS},1);
     }
 
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void getMess(View view) {
-        Intent intent = new Intent(this,RecieveMessage.class);
+        Intent intent = new Intent(this,displayMessage.class);
         startActivity(intent);
     }
 }

@@ -3,16 +3,30 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Make a Message!"
+        android:id="@+id/textView5"
+        android:textAlignment="center"
+        android:layout_above="@+id/unCodedMsg"
+        android:layout_alignLeft="@+id/unCodedMsg"
+        android:layout_alignStart="@+id/unCodedMsg"
+        android:layout_marginBottom="93dp"
+        android:layout_alignRight="@+id/unCodedMsg"
+        android:layout_alignEnd="@+id/unCodedMsg" />
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/unCodedMsg"
         android:hint="Type your Message here!"
-        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="61dp" />
+        android:textColor="@color/mainText"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -23,5 +37,7 @@
         android:layout_marginBottom="133dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:onClick="acquireTarget"/>
+        android:onClick="acquireTarget"
+        android:textColor="#000000"/>
+
 </RelativeLayout>

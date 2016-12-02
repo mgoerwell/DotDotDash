@@ -9,23 +9,28 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.user.dotdotdash.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ImageView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Dot Dot Dash!"
-        android:layout_marginTop="70dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/imageView"
+        android:src="@drawable/logo"
+        android:layout_alignBottom="@+id/viewButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Make a New Message"
         android:id="@+id/makeButton"
+        android:layout_marginBottom="45dp"
+        android:onClick="writeMess"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="184dp"
-        android:onClick="writeMess"/>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/imageView"
+        android:layout_alignEnd="@+id/imageView"
+        android:textColor="@color/Black"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -33,7 +38,22 @@
         android:text="View A Message"
         android:id="@+id/viewButton"
         android:layout_above="@+id/makeButton"
-        android:layout_centerHorizontal="true"
         android:layout_marginBottom="35dp"
-        android:onClick="getMess"/>
+        android:onClick="getMess"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/imageView"
+        android:layout_alignEnd="@+id/imageView"
+        android:textColor="@color/Black" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Dot Dot Dash"
+        android:id="@+id/textView4"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@+id/imageView"
+        android:textSize="40dp" />
+
 </RelativeLayout>

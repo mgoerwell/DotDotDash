@@ -12,7 +12,9 @@
         android:id="@+id/textView"
         android:layout_gravity="center_horizontal"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="98dp"
+        android:textAlignment="center" />
 
     <Button
         android:layout_width="wrap_content"
@@ -22,7 +24,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:onClick="writeText"/>
+        android:onClick="writeText"
+        android:textColor="@color/Black"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -32,5 +35,6 @@
         android:layout_marginTop="47dp"
         android:layout_below="@+id/button"
         android:layout_centerHorizontal="true"
-        android:onClick="writeMorse"/>
+        android:onClick="writeMorse"
+        android:textColor="@color/Black"/>
 </RelativeLayout>

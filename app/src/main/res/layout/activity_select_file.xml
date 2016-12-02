@@ -3,23 +3,36 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:drawSelectorOnTop="false"
-        android:id="@android:id/list"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_above="@+id/selectMessButton" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Decode Message"
         android:id="@+id/selectMessButton"
+        android:onClick="seeMess"
+        android:textColor="@color/Black"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:onClick="seeMess" />
+        android:layout_marginBottom="84dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/codeMess"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/selectMessButton"
+        android:layout_alignEnd="@+id/selectMessButton"
+        android:layout_alignLeft="@+id/selectMessButton"
+        android:layout_alignStart="@+id/selectMessButton"
+        android:textColor="@color/mainText"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Enter Message Below!"
+        android:id="@+id/textView3"
+        android:layout_above="@+id/codeMess"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="117dp" />
+
 </RelativeLayout>

@@ -9,28 +9,32 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Current Letter"
         android:id="@+id/letter"
+        android:layout_marginTop="39dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="54dp" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Dot"
         android:id="@+id/dot"
-        android:layout_marginTop="66dp"
-        android:layout_below="@+id/letter"
+        android:textColor="#000000"
+        android:layout_above="@+id/advanceChar"
         android:layout_toLeftOf="@+id/letter"
-        android:layout_toStartOf="@+id/letter" />
+        android:layout_toStartOf="@+id/letter"
+        android:layout_marginBottom="57dp"
+        android:onClick="dotEntered" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Dash"
         android:id="@+id/dash"
+        android:textColor="#000000"
         android:layout_alignTop="@+id/dot"
         android:layout_toRightOf="@+id/letter"
-        android:layout_toEndOf="@+id/letter" />
+        android:layout_toEndOf="@+id/letter"
+        android:onClick="dashEntered" />
 
     <Button
         android:layout_width="wrap_content"
@@ -39,7 +43,9 @@
         android:id="@+id/advanceChar"
         android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/dot"
-        android:layout_alignStart="@+id/dot" />
+        android:layout_alignStart="@+id/dot"
+        android:textColor="#000000"
+        android:onClick="nextCharacter" />
 
     <Button
         android:layout_width="wrap_content"
@@ -49,7 +55,8 @@
         android:layout_below="@+id/discardLetter"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="44dp"
-        android:onClick="howToSpell"/>
+        android:onClick="howToSpell"
+        android:textColor="#000000"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -60,7 +67,8 @@
         android:layout_alignRight="@+id/dash"
         android:layout_alignEnd="@+id/dash"
         android:layout_alignLeft="@+id/dash"
-        android:layout_alignStart="@+id/dash" />
+        android:layout_alignStart="@+id/dash"
+        android:textColor="@color/Black"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -73,5 +81,17 @@
         android:layout_marginTop="52dp"
         android:layout_alignRight="@+id/makeDisc"
         android:layout_alignEnd="@+id/makeDisc"
-        android:onClick="acquireTarget"/>
+        android:onClick="acquireTarget"
+        android:textColor="@color/Black"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/messageText"
+        android:layout_above="@+id/dot"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="33dp"
+        android:textAlignment="center" />
 </RelativeLayout>

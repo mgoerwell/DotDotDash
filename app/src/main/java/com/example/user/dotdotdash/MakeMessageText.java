@@ -58,7 +58,7 @@ public class MakeMessageText extends AppCompatActivity {
 
     protected void convertMessage(View view){
         morseToSend = "";
-        // 1) store user input into temp string
+
         String temp = userInput.getText().toString().toLowerCase();
         String temp2;
 
@@ -68,9 +68,6 @@ public class MakeMessageText extends AppCompatActivity {
             morseToSend += convertToMorse(temp2);
         }
         Toast.makeText(this, morseToSend,Toast.LENGTH_SHORT).show();
-
-
-
     }
 
     protected void sendMess(String number) {

@@ -23,6 +23,8 @@ public class MakeMessageMorse extends AppCompatActivity{
     String currCharacter = "";
     String morseMessageConverted = "";
     String morseMessage;
+    String morseToSend = "";
+    String morse;
 
     TextView message;
 
@@ -86,7 +88,7 @@ public class MakeMessageMorse extends AppCompatActivity{
         }
         try {
             SmsManager sms = SmsManager.getDefault();
-            sms.sendTextMessage(phoneNumber, null, morseMessageConverted, null, null);
+            sms.sendTextMessage(phoneNumber, null, morseToSend, null, null);
 
             Toast.makeText(this,"Message Sent",Toast.LENGTH_SHORT).show();
         }
@@ -110,10 +112,12 @@ public class MakeMessageMorse extends AppCompatActivity{
             Toast.makeText(this, "Invalid Morse", Toast.LENGTH_SHORT).show();
             morseBuffer = "";
         } else {
+            morseToSend += morseBuffer + " ";
             morseMessageConverted += getCurrCharacter();
             morseMessage += morseBuffer;
             message.setText(morseMessageConverted);
             morseBuffer = "";
+            //Toast.makeText(this, morseToSend, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -334,12 +338,17 @@ public class MakeMessageMorse extends AppCompatActivity{
             case "": // use specifies a space
                 matchFound = true;
                 setCurrCharacter(" ");
+                setSpace();
                 break;
         }
 
         return matchFound;
     }
 
+    private void setSpace()
+    {
+        morseToSend += "- ";
+    }
 
     private void setCurrCharacter(String character){
         currCharacter = character;

@@ -68,7 +68,8 @@
         android:layout_alignEnd="@+id/dash"
         android:layout_alignLeft="@+id/dash"
         android:layout_alignStart="@+id/dash"
-        android:textColor="@color/Black"/>
+        android:textColor="@color/Black"
+        android:onClick="deleteCurrCharacter"/>
 
     <Button
         android:layout_width="wrap_content"

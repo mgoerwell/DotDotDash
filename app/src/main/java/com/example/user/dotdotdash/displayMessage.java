@@ -206,9 +206,4 @@ public class displayMessage extends AppCompatActivity {
         return retString;
     }
 
-
-    protected void getDict(View view) {
-        Intent intent = new Intent(this,MorseDictionary.class);
-        startActivity(intent);
-    }
 }

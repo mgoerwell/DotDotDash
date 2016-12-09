@@ -40,11 +40,6 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".RecieveMessage"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
             android:name=".MorseDictionary"
             android:configChanges="orientation"
             android:screenOrientation="portrait" >

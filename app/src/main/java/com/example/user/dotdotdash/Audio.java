@@ -4,7 +4,9 @@ import android.content.Context;
 import android.media.MediaPlayer;
 
 /**
- * Created by user on 02/11/2016.
+ * File that handles the audio functionality of the morse code generation
+ * In a perfect world this would allow us to programmatically play a message
+ * from a morse code string, but that functionality was cut.
  */
 public class Audio {
     //media player for morse code audio.
@@ -13,89 +15,41 @@ public class Audio {
     //Receiver for the context the audio is playing in.
     private final Context context;
 
+    /*
+     *  Constructor method. Takes the current context so that it knows which activity to limit
+     *  itself to.
+     *  @param c (used to determine the where it was made)
+     */
     public Audio(Context c) {
         context = c;
     }
 
+    /*
+     *  Method playDot
+     *  Description: a method that resets the media player and plays the tone
+     *  for a dot character.
+     */
     public void playDot() {
+        if (SE != null) {
+            SE.reset();
+            SE.release();
+        }
         SE = MediaPlayer.create(context,R.raw.dot);
         SE.start();
-        SE.setOnCompletionListener(done);
     }
 
+    /*
+     *  Method playDash
+     *  Description: a method that resets the media player and plays the tone
+     *  for a dash character.
+     */
     public void playDash() {
+        if (SE != null) {
+            SE.reset();
+            SE.release();
+        }
         SE = MediaPlayer.create(context,R.raw.dash);
         SE.start();
-        SE.setOnCompletionListener(done);
     }
 
-    public void makeSpace() {
-        SE = MediaPlayer.create(context,R.raw.letterspace);
-        SE.start();
-        SE.setOnCompletionListener(finish);
-    }
-
-    private final MediaPlayer.OnCompletionListener done = new MediaPlayer.OnCompletionListener() {
-        @Override
-        public void onCompletion(MediaPlayer mp) {
-            if (mp == SE) {
-                SE.reset();
-                SE.release();
-                SE = MediaPlayer.create(context,R.raw.bitspace);
-                SE.setOnCompletionListener(finish);
-            }
-        }
-    };
-
-    private final MediaPlayer.OnCompletionListener finish = new MediaPlayer.OnCompletionListener() {
-        @Override
-        public void onCompletion(MediaPlayer mp) {
-            if (mp == SE) {
-                SE.reset();
-                SE.release();
-            }
-        }
-    };
-
-    public void playMorse(String morseCode) {
-        //enable string to be processed char by char
-        final char[] morse = morseCode.toCharArray();
-        //thread to enable waiting for sounds to resolve between characters
-        Thread messThread = new Thread(){
-            //required method to run thread
-            public void run() {
-
-                //for each loop for character processing
-                for (char c : morse) {
-                    switch (c) {
-                        case '0':   // dot character
-                            playDot();
-                            try {
-                                sleep(208); // length of dot.mp3 and bitspace.mp3 combined
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                            break;
-                        case '1': //dash character
-                            playDash();
-                            try {
-                                sleep(391); // length of dash.mp3 and bitspace.mp3 combined
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                            break;
-                        default: //
-                            makeSpace();
-                            try {
-                                sleep(183);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                            break;
-                    }
-                }
-            }
-        };
-        messThread.start();
-    }
 }

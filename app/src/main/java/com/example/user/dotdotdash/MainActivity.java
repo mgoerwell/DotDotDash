@@ -18,11 +18,19 @@ public class MainActivity extends AppCompatActivity {
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.READ_CONTACTS},1);
     }
 
+    /*
+    *  Opens up the Make a morse Code Message menu activity
+    *  @param view  (isn't used but must be included)
+    */
     protected void writeMess(View view) {
         Intent intent = new Intent(this,MakeMessage.class);
         startActivity(intent);
     }
 
+    /*
+    *  Opens up the Display message activity
+    *  @param view  (isn't used but must be included)
+    */
     protected void getMess(View view) {
         Intent intent = new Intent(this,displayMessage.class);
         startActivity(intent);

@@ -26,12 +26,19 @@ public class MakeMessageText extends AppCompatActivity {
         userInput = (EditText) findViewById(R.id.unCodedMsg);
     }
 
+    /*
+    *  Opens up the built in contact list to get a phone number for SMS
+    *  @param view  (isn't used but must be included)
+    */
     protected void acquireTarget(View view) {
         Intent intent = new Intent(Intent.ACTION_PICK);
         intent.setType(ContactsContract.CommonDataKinds.Phone.CONTENT_TYPE);
         startActivityForResult(intent,1);
     }
 
+    /*
+     *  Processes the contact selected by acquire target for sending an SMS
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (data != null) {
